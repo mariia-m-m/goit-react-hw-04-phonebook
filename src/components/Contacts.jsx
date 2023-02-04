@@ -7,8 +7,8 @@ const Contacts = ({ onDelete, onFilter }) => {
   const elements = filteredContacts.map(({ name, number, id }) => {
     return (
       <li key={id}>
-        <p className={styles.name}>{name}</p>
-        <p className={styles.name}>{number}</p>
+        <p className={styles.nameContact}>{name}</p>
+        <p className={styles.nameContact}>{number}</p>
         <button onClick={() => onDelete(id)}>Delete</button>
       </li>
     );

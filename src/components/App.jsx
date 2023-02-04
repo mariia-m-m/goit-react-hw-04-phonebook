@@ -18,10 +18,12 @@ export const App = () => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
-  const isDublicate = name => {
+  const isDublicate = (name, number) => {
     const normalizedName = name.toLowerCase();
     const contact = contacts.find(item => {
-      return item.name.toLowerCase() === normalizedName;
+      return (
+        item.name.toLowerCase() === normalizedName && item.number === number
+      );
     });
 
     return Boolean(contact);
