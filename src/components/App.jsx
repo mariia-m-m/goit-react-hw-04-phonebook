@@ -11,6 +11,7 @@ export const App = () => {
     const books = JSON.parse(localStorage.getItem('contacts'));
     return books ? books : [];
   });
+
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
@@ -64,19 +65,6 @@ export const App = () => {
     });
     return result;
   };
-
-  // const componentDidMount = () => {
-  //   const contacts = JSON.parse(localStorage.getItem('contacts'));
-
-  //   if (contacts && contacts.length > 0) {
-  //     setContacts(contacts);
-  //   }
-  // };
-
-  // const componentDidUpdate = (prevProps, prevState) => {
-  //   if (contacts.length !== prevState.contacts.length)
-  //     localStorage.setItem('contacts', JSON.stringify(contacts));
-  // };
 
   const isContacts = Boolean(contacts.length);
 
